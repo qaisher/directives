@@ -1,0 +1,39 @@
+<!--ngIf directive-->
+
+<h1 *ngIf="display; else elseBlock1">This sentence appears based on ngIf.</h1>
+<ng-template #elseBlock1>
+    <h2>Sentence is hidden.</h2>
+</ng-template>
+
+
+
+<h2 *ngIf="display; then thenBlock; else elseBlock2">This is an instance ngIf-then-else.</h2>
+
+<ng-template #thenBlock>
+    <h2>This element displays when condition is true.</h2>
+</ng-template>
+
+<ng-template #elseBlock2>
+    <h2>This element displays when condition is false.</h2>
+</ng-template>
+
+
+<!--ngSwitch directive-->
+
+<div [ngSwitch]="gender">
+
+
+    <input *ngSwitchCase="'male'" type="button" value="Show Mens Shirt">
+
+    <input *ngSwitchCase="'female'" type="button" value="Show Womens Shirt">
+
+    <input *ngSwitchCase="'boys'" type="button" value="Show Boys Shirt">
+    <input *ngSwitchCase="'girls'" type="button" value="Show Girls Shirt">
+    <input *ngSwitchDefault type="button" value="Show All">
+
+</div>
+
+
+<div *ngFor="let name of names; index as i">
+<h3>{{i+1}} {{name}}</h3>
+</div>
